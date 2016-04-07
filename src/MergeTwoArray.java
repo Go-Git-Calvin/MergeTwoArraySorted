@@ -7,26 +7,26 @@
  */
 public class MergeTwoArray {
 
-    // method to merge two int array
     public int[] merge(int a[], int b[]) {
+
         int[] result = new int[a.length + b.length];
-        int aIndex = 0, bIndex = 0;
+        int a_Index = 0, b_Index = 0;
 
         for (int i = 0; i < result.length; i++) {
-            if (aIndex < a.length && bIndex < b.length) {
-                if (a[aIndex] < b[bIndex]) {
-                    result[i] = a[aIndex];
-                    aIndex++;
+            if (a_Index < a.length && b_Index < b.length) {
+                if (a[a_Index] < b[b_Index]) {
+                    result[i] = a[a_Index];
+                    a_Index++;
                 } else {
-                    result[i] = b[bIndex];
-                    bIndex++;
+                    result[i] = b[b_Index];
+                    b_Index++;
                 }
-            } else if (aIndex < a.length) {
-                result[i] = a[aIndex];
-                aIndex++;
+            } else if (a_Index < a.length) {
+                result[i] = a[a_Index];
+                a_Index++;
             } else {
-                result[i] = b[bIndex];
-                bIndex++;
+                result[i] = b[b_Index];
+                b_Index++;
             }
         }
         return result;
